@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from user import User
-from application import Application
+from model.user import User
+from fixture.application import Application
 
 
 @pytest.fixture
@@ -9,6 +9,7 @@ def app(request):
     fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
+
 
 def test_add_user(app):
         app.open_home_page()
