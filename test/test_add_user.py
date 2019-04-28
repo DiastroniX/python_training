@@ -13,7 +13,7 @@ def app(request):
 
 def test_add_user(app):
         app.open_home_page()
-        app.login(username="admin", password="secret")
+        app.session.login(username="admin", password="secret")
         app.create_new_user(User(firstname="Barsik",
                                         lastname="Petrovich",
                                         company="Zmeeust",
@@ -22,4 +22,4 @@ def test_add_user(app):
                                         email="nepishimne@trololo.urr",
                                         address2="Moy address USSR"))
         app.return_to_homepage()
-        app.logout()
+        app.session.logout()
