@@ -4,7 +4,6 @@ from model.user import User
 
 def test_add_user(app):
         app.open_home_page()
-        app.session.login(username="admin", password="secret")
         app.user.create(User(firstname="Barsik",
                              lastname="Petrovich",
                              company="Zmeeust",
@@ -13,4 +12,3 @@ def test_add_user(app):
                              email="nepishimne@trololo.urr",
                              address2="Moy address USSR"))
         app.user.return_to_homepage()
-        app.session.logout()
