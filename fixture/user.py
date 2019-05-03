@@ -5,12 +5,12 @@ class UserHelper:
     def __init__(self, app):
         self.app = app
 
-    def create(self, user):
+    def create(self, new_user_data):
         wd = self.app.wd
         # init add new user
         wd.find_element_by_link_text("add new").click()
         # fill user form
-        self.fill_user_data(user)
+        self.fill_user_form(new_user_data)
         # submit form
         wd.find_element_by_xpath("//input[21]").click()
 
@@ -25,38 +25,31 @@ class UserHelper:
         # wait message
         wd.find_elements_by_css_selector("div.msgbox")
 
-    def edit_first(self, user):
+    def edit_first(self, new_user_data):
         wd = self.app.wd
         # push edit button on first user
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         # fill new data
-        self.fill_user_data(user)
+        self.fill_user_form(new_user_data)
         # update form button
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
 
-    def fill_user_data(self, user):
+    def fill_user_form(self, user):
         wd = self.app.wd
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys(user.firstname)
-        wd.find_element_by_name("lastname").click()
-        wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys(user.lastname)
-        wd.find_element_by_name("company").click()
-        wd.find_element_by_name("company").clear()
-        wd.find_element_by_name("company").send_keys(user.company)
-        wd.find_element_by_name("address").click()
-        wd.find_element_by_name("address").clear()
-        wd.find_element_by_name("address").send_keys(user.address)
-        wd.find_element_by_name("home").click()
-        wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys(user.home)
-        wd.find_element_by_name("email").click()
-        wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys(user.email)
-        wd.find_element_by_name("address2").click()
-        wd.find_element_by_name("address2").clear()
-        wd.find_element_by_name("address2").send_keys(user.address2)
+        self.change_field_value("firstname", user.firstname)
+        self.change_field_value("lastname", user.lastname)
+        self.change_field_value("company", user.company)
+        self.change_field_value("address", user.address)
+        self.change_field_value("home", user.home)
+        self.change_field_value("email", user.email)
+        self.change_field_value("address2", user.address2)
+
+    def change_field_value(self, field_name, text):
+        wd = self.app.wd
+        if text is not None:
+            wd.find_element_by_name(field_name).click()
+            wd.find_element_by_name(field_name).clear()
+            wd.find_element_by_name(field_name).send_keys(text)
 
     def return_to_homepage(self):
         wd = self.app.wd

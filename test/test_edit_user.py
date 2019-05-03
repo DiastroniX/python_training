@@ -9,9 +9,6 @@ def test_edit_first_user(app):
     app.user.edit_first(User(firstname="Krolik",
                                   lastname="Ivanovich",
                                   company="Trololosik",
-                                  address="Luna_Avenue_1",
-                                  home="15",
-                                  email="pishimne@pomada.lol",
                                   address2="Kakoi-to"))
     app.user.return_to_homepage()
     app.session.logout()
