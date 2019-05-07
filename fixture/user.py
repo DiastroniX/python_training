@@ -7,6 +7,7 @@ class UserHelper:
 
     def create(self, new_user_data):
         wd = self.app.wd
+        self.open_homepage()
         # init add new user
         wd.find_element_by_link_text("add new").click()
         # fill user form
@@ -16,6 +17,7 @@ class UserHelper:
 
     def delete_first_user(self):
         wd = self.app.wd
+        self.open_homepage()
         # select first user
         wd.find_element_by_name("selected[]").click()
         # click delete button
@@ -27,6 +29,7 @@ class UserHelper:
 
     def edit_first(self, new_user_data):
         wd = self.app.wd
+        self.open_homepage()
         # push edit button on first user
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         # fill new data
@@ -55,6 +58,11 @@ class UserHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
 
+    def open_homepage(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+
     def count(self):
         wd = self.app.wd
+        self.open_homepage()
         return len(wd.find_elements_by_name("selected[]"))
