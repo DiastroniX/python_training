@@ -10,4 +10,3 @@ def test_edit_first_user(app):
                                   lastname="Ivanovich",
                                   company="Trololosik",
                                   address2="Kakoi-to"))
-    app.user.return_to_homepage()

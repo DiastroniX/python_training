@@ -14,6 +14,7 @@ class UserHelper:
         self.fill_user_form(new_user_data)
         # submit form
         wd.find_element_by_xpath("//input[21]").click()
+        self.return_to_homepage()
 
     def delete_first_user(self):
         wd = self.app.wd
@@ -26,6 +27,7 @@ class UserHelper:
         wd.switch_to_alert().accept()
         # wait message
         wd.find_elements_by_css_selector("div.msgbox")
+        self.return_to_homepage()
 
     def edit_first(self, new_user_data):
         wd = self.app.wd
@@ -36,6 +38,7 @@ class UserHelper:
         self.fill_user_form(new_user_data)
         # update form button
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        self.return_to_homepage()
 
     def fill_user_form(self, user):
         wd = self.app.wd
@@ -56,11 +59,13 @@ class UserHelper:
 
     def return_to_homepage(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home page").click()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchstring")) > 0):
+            wd.find_element_by_link_text("home").click()
 
     def open_homepage(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchstring")) > 0):
+            wd.find_element_by_link_text("home").click()
 
     def count(self):
         wd = self.app.wd
