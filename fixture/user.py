@@ -17,11 +17,14 @@ class UserHelper:
         self.return_to_homepage()
         self.user_cache = None
 
-    def delete_first_user(self):
+    def delete_first(self):
+        self.delete_by_index(0)
+
+    def delete_by_index(self, index):
         wd = self.app.wd
         self.open_homepage()
-        # select first user
-        wd.find_element_by_name("selected[]").click()
+        # select user with delete parameter
+        self.select_user_by_index(index, 'delete')
         # click delete button
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         # accept delete user
@@ -31,11 +34,15 @@ class UserHelper:
         self.return_to_homepage()
         self.user_cache = None
 
-    def edit_first(self, new_user_data):
+    def edit_first(self):
+        wd = self.app.wd
+        self.edit_by_index(0)
+
+    def edit_by_index(self, index, new_user_data):
         wd = self.app.wd
         self.open_homepage()
-        # push edit button on first user
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        # select user with edit parameter
+        self.select_user_by_index(index, "edit")
         # fill new data
         self.fill_user_form(new_user_data)
         # update form button
@@ -69,6 +76,20 @@ class UserHelper:
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchstring")) > 0):
             wd.find_element_by_link_text("home").click()
+
+    def select_first_user(self, find_type_marker):
+        wd = self.app.wd
+        if find_type_marker == 'edit':
+            wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        elif find_type_marker == 'delete':
+            wd.find_element_by_name("selected[]").click()
+
+    def select_user_by_index(self, index, find_type_marker):
+        wd = self.app.wd
+        if find_type_marker == 'edit':
+            wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+        elif find_type_marker == 'delete':
+            wd.find_elements_by_name("selected[]")[index].click()
 
     def count(self):
         wd = self.app.wd
