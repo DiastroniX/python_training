@@ -12,7 +12,7 @@ def test_add_user(app):
                 email="nepishimne@trololo.urr",
                 address2="Moy address USSR")
     app.user.create(user)
+    assert len(old_users) + 1 == app.user.count()
     new_users = app.user.get_users_list()
-    assert len(old_users) + 1 == len(new_users)
     old_users.append(user)
     assert sorted(old_users, key=User.id_or_max) == sorted(new_users, key=User.id_or_max)

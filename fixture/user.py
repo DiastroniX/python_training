@@ -15,6 +15,7 @@ class UserHelper:
         # submit form
         wd.find_element_by_xpath("//input[21]").click()
         self.return_to_homepage()
+        self.user_cache = None
 
     def delete_first_user(self):
         wd = self.app.wd
@@ -28,6 +29,7 @@ class UserHelper:
         # wait message
         wd.find_elements_by_css_selector("div.msgbox")
         self.return_to_homepage()
+        self.user_cache = None
 
     def edit_first(self, new_user_data):
         wd = self.app.wd
@@ -39,6 +41,7 @@ class UserHelper:
         # update form button
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
         self.return_to_homepage()
+        self.user_cache = None
 
     def fill_user_form(self, user):
         wd = self.app.wd
@@ -72,14 +75,17 @@ class UserHelper:
         self.open_homepage()
         return len(wd.find_elements_by_name("selected[]"))
 
+    user_cache = None
+
     def get_users_list(self):
-        wd = self.app.wd
-        self.open_homepage()
-        users = []
-        for element in wd.find_elements_by_name("entry"):
-            td = element.find_elements_by_tag_name("td")
-            id = td[0].find_element_by_name("selected[]").get_attribute("value")
-            first_name = td[2].text
-            last_name = td[1].text
-            users.append(User(firstname=first_name, lastname=last_name, id=id))
-        return users
+        if self.user_cache is None:
+            wd = self.app.wd
+            self.open_homepage()
+            self.user_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                td = element.find_elements_by_tag_name("td")
+                id = td[0].find_element_by_name("selected[]").get_attribute("value")
+                first_name = td[2].text
+                last_name = td[1].text
+                self.user_cache.append(User(firstname=first_name, lastname=last_name, id=id))
+        return list(self.user_cache)
