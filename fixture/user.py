@@ -117,26 +117,33 @@ class UserHelper:
             for element in wd.find_elements_by_name("entry"):
                 td = element.find_elements_by_tag_name("td")
                 id = td[0].find_element_by_name("selected[]").get_attribute("value")
-                all_phones = td[5].text
-                first_name = td[2].text
                 last_name = td[1].text
-                self.user_cache.append(User(firstname=first_name, lastname=last_name, id=id, all_phones_from_home_page = all_phones))
+                first_name = td[2].text
+                address = td[3].text
+                all_emails = td[4].text
+                all_phones = td[5].text
+                self.user_cache.append(User(id=id, lastname=last_name, firstname=first_name,
+                                            address=address, all_emails_from_home_page=all_emails, all_phones_from_home_page=all_phones))
         return list(self.user_cache)
 
     def get_user_info_from_edit_page(self, index):
         wd = self.app.wd
         self.open_homepage()
         self.select_user_by_index(index, "edit")
-        firstname = wd.find_element_by_name("firstname").get_attribute("value")
-        lastname = wd.find_element_by_name("lastname").get_attribute("value")
         id = wd.find_element_by_name("id").get_attribute("value")
+        lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        firstname = wd.find_element_by_name("firstname").get_attribute("value")
+        address = wd.find_element_by_name("address").get_attribute("value")
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         home = wd.find_element_by_name("home").get_attribute("value")
         work = wd.find_element_by_name("work").get_attribute("value")
         mobile = wd.find_element_by_name("mobile").get_attribute("value")
         phone2 = wd.find_element_by_name("phone2").get_attribute("value")
-        return User(firstname=firstname, lastname=lastname, id=id,
-                    home=home, mobile=mobile,
-                    work=work, phone2=phone2)
+        return User(id=id, lastname=lastname, firstname=firstname, address=address,
+                    email=email, email2=email2, email3=email3,
+                    home=home, mobile=mobile, work=work, phone2=phone2)
 
     def get_users_from_view_page(self, index):
         wd = self.app.wd
