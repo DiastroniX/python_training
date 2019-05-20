@@ -117,12 +117,10 @@ class UserHelper:
             for element in wd.find_elements_by_name("entry"):
                 td = element.find_elements_by_tag_name("td")
                 id = td[0].find_element_by_name("selected[]").get_attribute("value")
-                all_phones = td[5].text.splitlines()
+                all_phones = td[5].text
                 first_name = td[2].text
                 last_name = td[1].text
-                self.user_cache.append(User(firstname=first_name, lastname=last_name, id=id,
-                                            home=all_phones[0], mobile=all_phones[1],
-                                            work=all_phones[2], phone2=all_phones[3]))
+                self.user_cache.append(User(firstname=first_name, lastname=last_name, id=id, all_phones_from_home_page = all_phones))
         return list(self.user_cache)
 
     def get_user_info_from_edit_page(self, index):
