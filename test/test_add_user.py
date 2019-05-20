@@ -9,6 +9,9 @@ def test_add_user(app):
                 company="Zmeeust",
                 address="Mars avenue",
                 home="777",
+                work="888547",
+                mobile="455244",
+                phone2="4123665",
                 email="nepishimne@trololo.urr",
                 address2="Moy address USSR")
     app.user.create(user)
