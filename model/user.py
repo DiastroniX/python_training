@@ -23,7 +23,9 @@ class User:
         self.all_phones_from_home_page = all_phones_from_home_page
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.id, self.firstname, self.lastname)
+        return "%s:%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s" % (self.id, self.firstname, self.company, self.address, self.home,
+                                self.work, self.mobile, self.phone2, self.email, self.email2,
+                                self.email3, self.address2)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and \

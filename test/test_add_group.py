@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from model.group import Group
 import pytest
 import random
