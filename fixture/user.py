@@ -35,6 +35,20 @@ class UserHelper:
         self.return_to_homepage()
         self.user_cache = None
 
+    def delete_by_id(self, id):
+        wd = self.app.wd
+        self.open_homepage()
+        # select user with delete parameter
+        self.select_user_by_id(id, 'delete')
+        # click delete button
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        # accept delete user
+        wd.switch_to_alert().accept()
+        # wait message
+        wd.find_elements_by_css_selector("div.msgbox")
+        self.return_to_homepage()
+        self.user_cache = None
+
     def edit_first(self):
         wd = self.app.wd
         self.edit_by_index(0)
@@ -44,6 +58,18 @@ class UserHelper:
         self.open_homepage()
         # select user with edit parameter
         self.select_user_by_index(index, "edit")
+        # fill new data
+        self.fill_user_form(new_user_data)
+        # update form button
+        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        self.return_to_homepage()
+        self.user_cache = None
+
+    def edit_by_id(self, id, new_user_data):
+        wd = self.app.wd
+        self.open_homepage()
+        # select user with edit parameter
+        self.select_user_by_id(id, "edit")
         # fill new data
         self.fill_user_form(new_user_data)
         # update form button
@@ -101,6 +127,13 @@ class UserHelper:
             wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         elif find_type_marker == 'delete':
             wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_user_by_id(self, id, find_type_marker):
+        wd = self.app.wd
+        if find_type_marker == 'edit':
+            wd.find_element_by_css_selector("[href^= 'edit.php?id=%s']" % id).click()
+        elif find_type_marker == 'delete':
+            wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def count(self):
         wd = self.app.wd
