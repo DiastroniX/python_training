@@ -6,7 +6,6 @@ import random
 def test_edit_some_user(app, db, check_ui):
     if len(db.get_user_list()) == 0:
         app.user.create(User(firstname="test"))
-    old_users = db.get_user_list()
     user_replacement = User(firstname="Krolik",
                                   lastname="Ivanovich",
                                   company="Trololosik",
