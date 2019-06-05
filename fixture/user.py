@@ -1,5 +1,6 @@
 from model.user import User
 import re
+import select
 
 class UserHelper:
 
@@ -18,14 +19,15 @@ class UserHelper:
         self.return_to_homepage()
         self.user_cache = None
 
+
     def delete_first(self):
         self.delete_by_index(0)
 
     def delete_by_index(self, index):
         wd = self.app.wd
         self.open_homepage()
-        # select user with delete parameter
-        self.select_user_by_index(index, 'delete')
+        # select user with parameter
+        self.select_user_by_index(index, 'choose')
         # click delete button
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         # accept delete user
@@ -38,8 +40,8 @@ class UserHelper:
     def delete_by_id(self, id):
         wd = self.app.wd
         self.open_homepage()
-        # select user with delete parameter
-        self.select_user_by_id(id, 'delete')
+        # select user with parameter
+        self.select_user_by_id(id, 'choose')
         # click delete button
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         # accept delete user
@@ -125,15 +127,16 @@ class UserHelper:
         wd = self.app.wd
         if find_type_marker == 'edit':
             wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
-        elif find_type_marker == 'delete':
+        elif find_type_marker == 'choose':
             wd.find_elements_by_name("selected[]")[index].click()
 
     def select_user_by_id(self, id, find_type_marker):
         wd = self.app.wd
         if find_type_marker == 'edit':
             wd.find_element_by_css_selector("[href^= 'edit.php?id=%s']" % id).click()
-        elif find_type_marker == 'delete':
+        elif find_type_marker == 'choose':
             wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
 
     def count(self):
         wd = self.app.wd
@@ -188,3 +191,38 @@ class UserHelper:
         mobile = re.search("M: (.*)", text).group(1)
         phone2 = re.search("P: (.*)", text).group(1)
         return User(home=home, mobile=mobile, work=work, phone2=phone2)
+
+    def add_to_group(self, user_id, group_id):
+        self.open_homepage()
+        # select user with parameter
+        self.select_user_by_id(user_id, "choose")
+        # select group
+        self.select_group(group_id)
+        self.return_to_homepage()
+        self.user_cache = None
+
+    def delete_from_group(self, user_id, group):
+        self.open_homepage()
+        self.select_group_by_id(group.id)
+        self.select_user_by_id(user_id, "choose")
+        self.app.wd.find_element_by_xpath('//input[@value=\'Remove from "{}"\']'.format(group.name)).click()
+        self.return_to_users_in_group_page(group.name)
+        self.user_cache = None
+
+    def select_group(self, group_id):
+        wd = self.app.wd
+        #open group list
+        wd.find_element_by_name('to_group').click()
+        #find group from list by group_id
+        wd.find_element_by_xpath('//select[@name=\'to_group\']/option[@value=\'{}\']'.format(group_id)).click()
+        #choose group
+        wd.find_element_by_name('add').click()
+
+    def select_group_by_id(self, group_id):
+        wd = self.app.wd
+        wd.find_element_by_name('group').click()
+        wd.find_element_by_xpath('//select[@name=\'group\']/option[@value=\'{}\']'.format(group_id)).click()
+
+    def return_to_users_in_group_page(self, group_name):
+        wd = self.app.wd
+        wd.find_element_by_link_text('group page "{}"'.format(group_name)).click()

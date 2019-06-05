@@ -43,16 +43,17 @@ class ORMFixture:
             return Group(id=str(group.id), name=group.name, header=group.header, footer=group.footer)
         return list(map(convert, groups))
 
-    @db_session
-    def get_group_list(self):
-       return self.convert_groups_to_model(select(g for g in ORMFixture.ORMGroup))
-
     def convert_users_to_model(self, users):
         def convert(user):
             return User(id=str(user.id), address=user.address, address2=user.address2, company=user.company, email=user.email,
                                 email2=user.email2, email3=user.email3, firstname=user.firstname, home=user.home,
                                 lastname=user.lastname, mobile=user.mobile, phone2=user.phone2, work=user.work)
         return list(map(convert, users))
+
+
+    @db_session
+    def get_group_list(self):
+       return self.convert_groups_to_model(select(g for g in ORMFixture.ORMGroup))
 
     @db_session
     def get_user_list(self):

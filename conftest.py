@@ -1,5 +1,6 @@
 from fixture.application import Application
 from fixture.db import DbFixture
+from fixture.orm import ORMFixture
 import pytest
 import json
 import os.path
@@ -30,6 +31,18 @@ def app(request):
     fixture.session.ensure_login(username=web_config["username"], password=web_config["password"])
     return fixture
 
+@pytest.fixture(scope='session')
+def orm(request):
+    orm_config = load_config(request.config.getoption('--target'))['db']
+    ormfixture = ORMFixture(
+        host=orm_config['host'], name=orm_config['name'],
+            user=orm_config['user'], password=orm_config['password']
+    )
+    return ormfixture
+
+
+def load_db_config(request):
+    return load_config(request.config.getoption('--target'))['db']
 
 @pytest.fixture(scope="session")
 def db(request):
