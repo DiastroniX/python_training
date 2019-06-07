@@ -1,19 +1,25 @@
 import re
-from random import randrange
 from model.user import User
 
 
-def test_data_on_home_page(app):
+def test_data_on_home_page(app, db):
     if app.user.count() == 0:
         app.user.create(User(firstname="test"))
-    index = randrange(len(app.user.get_users_list()))
-    user_from_home_page = app.user.get_users_list()[index]
-    user_from_edit_page = app.user.get_user_info_from_edit_page(index)
-    assert user_from_home_page.lastname == user_from_edit_page.lastname
-    assert user_from_home_page.firstname == user_from_edit_page.firstname
-    assert user_from_home_page.address == user_from_edit_page.address
-    assert user_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(user_from_edit_page)
-    assert user_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(user_from_edit_page)
+    users_from_home_page = app.user.get_users_list()
+    users_from_db = db.get_user_list()
+    assert len(users_from_home_page) == len(users_from_db)
+    users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)
+    users_from_db = sorted(users_from_db, key=User.id_or_max)
+    for i in range(len(users_from_db)):
+        compare(users_from_home_page[i], users_from_db[i])
+
+def compare(users_from_home_page, users_from_db):
+    assert users_from_home_page.address == users_from_db.address
+    assert users_from_home_page.firstname == users_from_db.firstname
+    assert users_from_home_page.lastname == users_from_db.lastname
+    assert users_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(users_from_db)
+    assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)
+
 
 def clear(s):
     return re.sub("[() -]]", "", s)
