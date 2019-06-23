@@ -1,0 +1,270 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1.28">
+  <suites>
+    <suite>
+      <file>C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests\results.xml</file>
+      <name>pytest</name>
+      <duration>48.98</duration>
+      <time>48.980</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>9.944</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:;;]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.027</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:name$&lt;&lt;+r%BK;headerz{.VZV?EsSXnUOe 4;footer\\,&lt;m^*-Ge+}3p*n{&quot;f]</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x040B7A30&gt;
+db = &lt;fixture.db.DbFixture object at 0x040B7390&gt;
+json_groups = None:name$&lt;&lt;+r%BK;headerz{.VZV?EsSXnUOe 4;footer\,&lt;m^*-Ge+}3p*n{&quot;f
+
+    def test_add_group(app, db, json_groups):
+        group = json_groups
+        old_groups = db.get_group_list()
+        app.group.create(group)
+        new_groups = db.get_group_list()
+        old_groups.append(group)
+&gt;       assert sorted(old_groups, key = Group.id_or_max) == sorted(new_groups, key = Group.id_or_max)
+E       assert [104:name;hea..., 116:;;, ...] == [104:name;head..., 116:;;, ...]
+E         At index 64 diff: None:name$&lt;&lt;+r%BK;headerz{.VZV?EsSXnUOe 4;footer\,&lt;m^*-Ge+}3p*n{&quot;f != 183:name$;headerz{.VZV?EsSXnUOe 4;footer,&lt;m^*-Ge+}3p*n{&quot;f
+E         Use -v to get the full diff
+
+test\test_add_group.py:11: AssertionError</errorStackTrace>
+          <errorDetails>assert [104:name;hea..., 116:;;, ...] == [104:name;head..., 116:;;, ...]   At index 64 diff: None:name$&lt;&lt;+r%BK;headerz{.VZV?EsSXnUOe 4;footer\,&lt;m^*-Ge+}3p*n{&quot;f != 183:name$;headerz{.VZV?EsSXnUOe 4;footer,&lt;m^*-Ge+}3p*n{&quot;f   Use -v to get the full diff</errorDetails>
+          <failedSince>5</failedSince>
+        </case>
+        <case>
+          <duration>1.066</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:nameT;Y;header* hL?2[;/;footer)VOO.E` =u{cA0:g6=#]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.093</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:name 2Q%;headerI-&gt;!Y)z 7:*?N~w&amp; k;footer?]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.092</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:named 2!+ZN ;header{ Zk;footer MWo OQ /{%0|]o}@]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.029</duration>
+          <className>test.test_add_group</className>
+          <testName>test_add_group[None:name,;header_r+-=&lt;?w&amp; r&lt;c;footerjV[ .]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.616</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:;;;;;;;;;;]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.835</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:firstnamerh2=B;company3wE}cS n;addressMCdE8yGd;hometele;worktel;mobiletelD;phone2telLyS;emaiu;email2@ut;email3@;address2O|q]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.737</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:firstnameM$f;company Xk8;addreu~;hometel G&amp;P;worktela4#C!@;mobiletel;phone2tel_x8.;email@5+X /;email2@KW(F(-N;email3@a{X;addres4r]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.77</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:firstname?Hp;companyLI;addressiZP7q.+;hometel;worktelG}5;mobiletel]hxv2F;phone2tel9BHm4;email@@Vxxk;email2;email3@PZ;address2?818j]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.753</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:firstnameB;companypW(I;addressns&lt;f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc&apos;;email2@s;email3@^~[;address2^eD]</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x040B7A30&gt;
+db = &lt;fixture.db.DbFixture object at 0x040B7390&gt;
+json_users = None:firstnameB;companypW(I;addressns&lt;f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc&apos;;email2@s;email3@^~[;address2^eD
+
+    def test_add_user(app, db, json_users):
+        user = json_users
+        old_users = db.get_user_list()
+        app.user.create(user)
+        new_users = db.get_user_list()
+        old_users.append(user)
+&gt;       assert sorted(old_users, key=User.id_or_max) == sorted(new_users, key=User.id_or_max)
+E       AssertionError: assert [97:Krolik;Tr...ss2?818j, ...] == [97:Krolik;Tro...ss2?818j, ...]
+E         Left contains one more item: None:firstnameB;companypW(I;addressns&lt;f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc&apos;;email2@s;email3@^~[;address2^eD
+E         Use -v to get the full diff
+
+test\test_add_user.py:12: AssertionError</errorStackTrace>
+          <errorDetails>AssertionError: assert [97:Krolik;Tr...ss2?818j, ...] == [97:Krolik;Tro...ss2?818j, ...]   Left contains one more item: None:firstnameB;companypW(I;addressns&lt;f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc&apos;;email2@s;email3@^~[;address2^eD   Use -v to get the full diff</errorDetails>
+          <failedSince>6</failedSince>
+        </case>
+        <case>
+          <duration>2.701</duration>
+          <className>test.test_add_user</className>
+          <testName>test_add_user[None:firstnameAr1;companUGD;addressO;hometelK;workte4F;mobiletel?;phone2teIS[;email@u)H4iD];email2@};email3@5;address2k]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.871</duration>
+          <className>test.test_add_user_to_group</className>
+          <testName>test_add_user_to_group</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.332</duration>
+          <className>test.test_db_matches_group_ui</className>
+          <testName>test_group_list</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>3.138</duration>
+          <className>test.test_db_matches_users_ui</className>
+          <testName>test_user_list</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.517</duration>
+          <className>test.test_del_group</className>
+          <testName>test_delete_some_group</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.461</duration>
+          <className>test.test_del_user</className>
+          <testName>test_delete_some_user</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.693</duration>
+          <className>test.test_delete_user_from_group</className>
+          <testName>test_add_contact_to_group</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.285</duration>
+          <className>test.test_edit_group</className>
+          <testName>test_edit_group_name</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.283</duration>
+          <className>test.test_edit_user</className>
+          <testName>test_edit_some_user</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>4.788</duration>
+          <className>test.test_phones</className>
+          <testName>test_phones_on_home_page</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.371</duration>
+          <className>test.test_phones</className>
+          <testName>test_phones_on_view_page</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x040B7A30&gt;
+
+    def test_phones_on_view_page(app):
+&gt;       user_from_view_page = app.user.get_users_from_view_page(0)
+
+test\test_phones.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;fixture.user.UserHelper object at 0x03C6BA30&gt;, index = 0
+
+    def get_users_from_view_page(self, index):
+        wd = self.app.wd
+        self.open_homepage()
+        self.open_by_index(index)
+        text = wd.find_element_by_id(&quot;content&quot;).text
+&gt;       home = re.search(&quot;H: (.*)&quot;, text).group(1)
+E       AttributeError: &apos;NoneType&apos; object has no attribute &apos;group&apos;
+
+fixture\user.py:189: AttributeError</errorStackTrace>
+          <errorDetails>AttributeError: &apos;NoneType&apos; object has no attribute &apos;group&apos;</errorDetails>
+          <failedSince>6</failedSince>
+        </case>
+        <case>
+          <duration>1.308</duration>
+          <className>test.test_user_data</className>
+          <testName>test_data_on_home_page</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x040B7A30&gt;
+db = &lt;fixture.db.DbFixture object at 0x040B7390&gt;
+
+    def test_data_on_home_page(app, db):
+        if app.user.count() == 0:
+            app.user.create(User(firstname=&quot;test&quot;))
+        users_from_home_page = app.user.get_users_list()
+        users_from_db = db.get_user_list()
+        assert len(users_from_home_page) == len(users_from_db)
+        users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)
+        users_from_db = sorted(users_from_db, key=User.id_or_max)
+        for i in range(len(users_from_db)):
+&gt;           compare(users_from_home_page[i], users_from_db[i])
+
+test\test_user_data.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+users_from_home_page = 101:firstnameM$f;None;addreu~;None;None;None;None;None;None;None;None
+users_from_db = 101:firstnameM$f;company Xk8;addreu~;hometel G&amp;P;worktela4#C!@;mobiletel;phone2tel_x8.;email@5+X /;;;addres4r
+
+    def compare(users_from_home_page, users_from_db):
+        assert users_from_home_page.address == users_from_db.address
+        assert users_from_home_page.firstname == users_from_db.firstname
+        assert users_from_home_page.lastname == users_from_db.lastname
+        assert users_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(users_from_db)
+&gt;       assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)
+E       AssertionError: assert &apos;hometelG&amp;P\n...nphone2tel_x8&apos; == &apos;hometel G&amp;P\n...phone2tel_x8.&apos;
+E         - hometelG&amp;P
+E         + hometel G&amp;P
+E         ?        +
+E           mobiletel
+E           worktela4#C!@
+E         - phone2tel_x8
+E         + phone2tel_x8.
+E         ?             +
+
+test\test_user_data.py:21: AssertionError</errorStackTrace>
+          <errorDetails>AssertionError: assert &apos;hometelG&amp;P\n...nphone2tel_x8&apos; == &apos;hometel G&amp;P\n...phone2tel_x8.&apos;   - hometelG&amp;P   + hometel G&amp;P   ?        +     mobiletel     worktela4#C!@   - phone2tel_x8   + phone2tel_x8.   ?             +</errorDetails>
+          <failedSince>6</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>48.98</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>

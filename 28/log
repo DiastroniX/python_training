@@ -1,0 +1,176 @@
+Started by user [8mha:////4I4Rgg1LYX7gYJi6TMoMUwaWOm4lznJLG6CsZNkcD9WiAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/DiastroniX/python_training # timeout=10
+Fetching upstream changes from https://github.com/DiastroniX/python_training
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --force --progress https://github.com/DiastroniX/python_training +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 86cddd2b277f37f9dbc30e3e46018b835313f213 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 86cddd2b277f37f9dbc30e3e46018b835313f213
+Commit message: "Delete"
+ > git.exe rev-list --no-walk 86cddd2b277f37f9dbc30e3e46018b835313f213 # timeout=10
+[addressbooks tests] $ cmd.exe /c call C:\Users\DIASTR~1\AppData\Local\Temp\shiningpanda6948479693379356556.bat
+
+C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests>pip install -r requirements.txt 
+Requirement already satisfied: pytest in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 1)) (4.6.3)
+Requirement already satisfied: pytest_bdd in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 2)) (3.1.0)
+Requirement already satisfied: selenium in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 3)) (3.141.0)
+Requirement already satisfied: jsonpickle in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 4)) (1.2)
+Requirement already satisfied: pony in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 5)) (0.7.10)
+Requirement already satisfied: pymysql in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 6)) (0.9.3)
+Requirement already satisfied: mysql-connector-python-rf in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 7)) (2.2.2)
+Requirement already satisfied: packaging in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (19.0)
+Requirement already satisfied: six>=1.10.0 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.12.0)
+Requirement already satisfied: colorama; sys_platform == "win32" in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.4.1)
+Requirement already satisfied: wcwidth in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.1.7)
+Requirement already satisfied: pluggy<1.0,>=0.12 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.12.0)
+Requirement already satisfied: importlib-metadata>=0.12 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.18)
+Requirement already satisfied: more-itertools>=4.0.0; python_version > "2.7" in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (7.0.0)
+Requirement already satisfied: atomicwrites>=1.0 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: py>=1.5.0 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.8.0)
+Requirement already satisfied: attrs>=17.4.0 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (19.1.0)
+Requirement already satisfied: parse in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (1.12.0)
+Requirement already satisfied: parse-type in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (0.4.2)
+Requirement already satisfied: Mako in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (1.0.12)
+Requirement already satisfied: glob2 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (0.7)
+Requirement already satisfied: urllib3 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from selenium->-r requirements.txt (line 3)) (1.25.3)
+Requirement already satisfied: pyparsing>=2.0.2 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from packaging->pytest->-r requirements.txt (line 1)) (2.4.0)
+Requirement already satisfied: zipp>=0.5 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from importlib-metadata>=0.12->pytest->-r requirements.txt (line 1)) (0.5.1)
+Requirement already satisfied: MarkupSafe>=0.9.2 in c:\users\diastronix\.jenkins\shiningpanda\jobs\83a6d4e0\virtualenvs\d41d8cd9\lib\site-packages (from Mako->pytest_bdd->-r requirements.txt (line 2)) (1.1.1)
+
+C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests>py.test --junitxml=results.xml test/ 
+============================= test session starts =============================
+platform win32 -- Python 3.7.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0
+rootdir: C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests
+plugins: bdd-3.1.0
+collected 23 items
+
+test\test_add_group.py .F....                                            [ 26%]
+test\test_add_user.py ....F.                                             [ 52%]
+test\test_add_user_to_group.py .                                         [ 56%]
+test\test_db_matches_group_ui.py .                                       [ 60%]
+test\test_db_matches_users_ui.py .                                       [ 65%]
+test\test_del_group.py .                                                 [ 69%]
+test\test_del_user.py .                                                  [ 73%]
+test\test_delete_user_from_group.py .                                    [ 78%]
+test\test_edit_group.py .                                                [ 82%]
+test\test_edit_user.py .                                                 [ 86%]
+test\test_phones.py .F                                                   [ 95%]
+test\test_user_data.py F                                                 [100%]
+
+================================== FAILURES ===================================
+_ test_add_group[None:name$<<+r%BK;headerz{.VZV?EsSXnUOe 4;footer\\,<m^*-Ge+}3p*n{"f] _
+
+app = <fixture.application.Application object at 0x040B7A30>
+db = <fixture.db.DbFixture object at 0x040B7390>
+json_groups = None:name$<<+r%BK;headerz{.VZV?EsSXnUOe 4;footer\,<m^*-Ge+}3p*n{"f
+
+    def test_add_group(app, db, json_groups):
+        group = json_groups
+        old_groups = db.get_group_list()
+        app.group.create(group)
+        new_groups = db.get_group_list()
+        old_groups.append(group)
+>       assert sorted(old_groups, key = Group.id_or_max) == sorted(new_groups, key = Group.id_or_max)
+E       assert [104:name;hea..., 116:;;, ...] == [104:name;head..., 116:;;, ...]
+E         At index 64 diff: None:name$<<+r%BK;headerz{.VZV?EsSXnUOe 4;footer\,<m^*-Ge+}3p*n{"f != 183:name$;headerz{.VZV?EsSXnUOe 4;footer,<m^*-Ge+}3p*n{"f
+E         Use -v to get the full diff
+
+test\test_add_group.py:11: AssertionError
+_ test_add_user[None:firstnameB;companypW(I;addressns<f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc';email2@s;email3@^~[;address2^eD] _
+
+app = <fixture.application.Application object at 0x040B7A30>
+db = <fixture.db.DbFixture object at 0x040B7390>
+json_users = None:firstnameB;companypW(I;addressns<f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc';email2@s;email3@^~[;address2^eD
+
+    def test_add_user(app, db, json_users):
+        user = json_users
+        old_users = db.get_user_list()
+        app.user.create(user)
+        new_users = db.get_user_list()
+        old_users.append(user)
+>       assert sorted(old_users, key=User.id_or_max) == sorted(new_users, key=User.id_or_max)
+E       AssertionError: assert [97:Krolik;Tr...ss2?818j, ...] == [97:Krolik;Tro...ss2?818j, ...]
+E         Left contains one more item: None:firstnameB;companypW(I;addressns<f;hometelpk;worktelU;mobiletel;phone2telv8BEO9;emaisTOc';email2@s;email3@^~[;address2^eD
+E         Use -v to get the full diff
+
+test\test_add_user.py:12: AssertionError
+__________________________ test_phones_on_view_page ___________________________
+
+app = <fixture.application.Application object at 0x040B7A30>
+
+    def test_phones_on_view_page(app):
+>       user_from_view_page = app.user.get_users_from_view_page(0)
+
+test\test_phones.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <fixture.user.UserHelper object at 0x03C6BA30>, index = 0
+
+    def get_users_from_view_page(self, index):
+        wd = self.app.wd
+        self.open_homepage()
+        self.open_by_index(index)
+        text = wd.find_element_by_id("content").text
+>       home = re.search("H: (.*)", text).group(1)
+E       AttributeError: 'NoneType' object has no attribute 'group'
+
+fixture\user.py:189: AttributeError
+___________________________ test_data_on_home_page ____________________________
+
+app = <fixture.application.Application object at 0x040B7A30>
+db = <fixture.db.DbFixture object at 0x040B7390>
+
+    def test_data_on_home_page(app, db):
+        if app.user.count() == 0:
+            app.user.create(User(firstname="test"))
+        users_from_home_page = app.user.get_users_list()
+        users_from_db = db.get_user_list()
+        assert len(users_from_home_page) == len(users_from_db)
+        users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)
+        users_from_db = sorted(users_from_db, key=User.id_or_max)
+        for i in range(len(users_from_db)):
+>           compare(users_from_home_page[i], users_from_db[i])
+
+test\test_user_data.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+users_from_home_page = 101:firstnameM$f;None;addreu~;None;None;None;None;None;None;None;None
+users_from_db = 101:firstnameM$f;company Xk8;addreu~;hometel G&P;worktela4#C!@;mobiletel;phone2tel_x8.;email@5+X /;;;addres4r
+
+    def compare(users_from_home_page, users_from_db):
+        assert users_from_home_page.address == users_from_db.address
+        assert users_from_home_page.firstname == users_from_db.firstname
+        assert users_from_home_page.lastname == users_from_db.lastname
+        assert users_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(users_from_db)
+>       assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)
+E       AssertionError: assert 'hometelG&P\n...nphone2tel_x8' == 'hometel G&P\n...phone2tel_x8.'
+E         - hometelG&P
+E         + hometel G&P
+E         ?        +
+E           mobiletel
+E           worktela4#C!@
+E         - phone2tel_x8
+E         + phone2tel_x8.
+E         ?             +
+
+test\test_user_data.py:21: AssertionError
+============================== warnings summary ===============================
+test/test_del_user.py::test_delete_some_user
+  C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests\fixture\user.py:48: DeprecationWarning: use driver.switch_to.alert instead
+    wd.switch_to_alert().accept()
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+- generated xml file: C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests\results.xml -
+============== 4 failed, 19 passed, 1 warnings in 48.98 seconds ===============
+
+C:\Users\DiastroniX\.jenkins\workspace\addressbooks tests>exit 1 
+Build step 'Virtualenv Builder' marked build as failure
+Recording test results
+Finished: FAILURE
