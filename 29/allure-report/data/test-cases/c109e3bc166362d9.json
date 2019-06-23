@@ -1,0 +1,133 @@
+{
+  "uid" : "c109e3bc166362d9",
+  "name" : "test_phones_on_view_page",
+  "fullName" : "test.test_phones#test_phones_on_view_page",
+  "historyId" : "6bae9dbfc571e8578443c2d4193bb9ae",
+  "time" : {
+    "start" : 1561324421892,
+    "stop" : 1561324422275,
+    "duration" : 383
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'group'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x03C71F50>\n\n    def test_phones_on_view_page(app):\n        with allure.step('Given a phone list from viewpage and editpage '):\n>           user_from_view_page = app.user.get_users_from_view_page(0)\n\ntest\\test_phones.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <fixture.user.UserHelper object at 0x03501CD0>, index = 0\n\n    def get_users_from_view_page(self, index):\n        wd = self.app.wd\n        self.open_homepage()\n        self.open_by_index(index)\n        text = wd.find_element_by_id(\"content\").text\n>       home = re.search(\"H: (.*)\", text).group(1)\nE       AttributeError: 'NoneType' object has no attribute 'group'\n\nfixture\\user.py:189: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324375160,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324384189,
+      "duration" : 9029
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'group'",
+    "statusTrace" : "app = <fixture.application.Application object at 0x03C71F50>\n\n    def test_phones_on_view_page(app):\n        with allure.step('Given a phone list from viewpage and editpage '):\n>           user_from_view_page = app.user.get_users_from_view_page(0)\n\ntest\\test_phones.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <fixture.user.UserHelper object at 0x03501CD0>, index = 0\n\n    def get_users_from_view_page(self, index):\n        wd = self.app.wd\n        self.open_homepage()\n        self.open_by_index(index)\n        text = wd.find_element_by_id(\"content\").text\n>       home = re.search(\"H: (.*)\", text).group(1)\nE       AttributeError: 'NoneType' object has no attribute 'group'\n\nfixture\\user.py:189: AttributeError",
+    "steps" : [ {
+      "name" : "Given a phone list from viewpage and editpage ",
+      "time" : {
+        "start" : 1561324421892,
+        "stop" : 1561324422274,
+        "duration" : 382
+      },
+      "status" : "broken",
+      "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'group'\n",
+      "statusTrace" : "  File \"C:\\python_training\\test\\test_phones.py\", line 14, in test_phones_on_view_page\n    user_from_view_page = app.user.get_users_from_view_page(0)\n  File \"C:\\python_training\\fixture\\user.py\", line 189, in get_users_from_view_page\n    home = re.search(\"H: (.*)\", text).group(1)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1561324422577,
+      "stop" : 1561324423749,
+      "duration" : 1172
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_phones"
+  }, {
+    "name" : "host",
+    "value" : "DiTech-PC"
+  }, {
+    "name" : "thread",
+    "value" : "8852-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "c109e3bc166362d9.json",
+  "parameterValues" : [ ]
+}

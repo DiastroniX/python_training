@@ -1,0 +1,193 @@
+{
+  "uid" : "cf9f005d8ec148d1",
+  "name" : "test_data_on_home_page",
+  "fullName" : "test.test_user_data#test_data_on_home_page",
+  "historyId" : "6ccadcada668caf0a5a8ec486ccb15bb",
+  "time" : {
+    "start" : 1561324422307,
+    "stop" : 1561324422562,
+    "duration" : 255
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\n  - hometelG&P\n  + hometel G&P\n  ?        +\n    mobiletel\n    worktela4#C!@\n  - phone2tel_x8\n  + phone2tel_x8....\n  \n  ...Full output truncated (2 lines hidden), use '-vv' to show",
+  "statusTrace" : "app = <fixture.application.Application object at 0x03C71F50>, db = <fixture.db.DbFixture object at 0x03C8D590>\n\n    def test_data_on_home_page(app, db):\n        with allure.step('Checking user count'):\n            if app.user.count() == 0:\n                app.user.create(User(firstname=\"test\"))\n        with allure.step('Given a user list from UI and DB'):\n            users_from_home_page = app.user.get_users_list()\n            users_from_db = db.get_user_list()\n        with allure.step('Then the user list from UI is equal to the user list from DB'):\n            assert len(users_from_home_page) == len(users_from_db)\n            users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)\n            users_from_db = sorted(users_from_db, key=User.id_or_max)\n            for i in range(len(users_from_db)):\n>               compare(users_from_home_page[i], users_from_db[i])\n\ntest\\test_user_data.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nusers_from_home_page = 101:firstnameM$f;None;addreu~;None;None;None;None;None;None;None;None\nusers_from_db = 101:firstnameM$f;company Xk8;addreu~;hometel G&P;worktela4#C!@;mobiletel;phone2tel_x8.;email@5+X /;;;addres4r\n\n    def compare(users_from_home_page, users_from_db):\n        assert users_from_home_page.address == users_from_db.address\n        assert users_from_home_page.firstname == users_from_db.firstname\n        assert users_from_home_page.lastname == users_from_db.lastname\n        assert users_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(users_from_db)\n>       assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)\nE       AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\nE         - hometelG&P\nE         + hometel G&P\nE         ?        +\nE           mobiletel\nE           worktela4#C!@\nE         - phone2tel_x8\nE         + phone2tel_x8....\nE         \nE         ...Full output truncated (2 lines hidden), use '-vv' to show\n\ntest\\test_user_data.py:25: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324375160,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324384189,
+      "duration" : 9029
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1561324384189,
+      "stop" : 1561324384190,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\n  - hometelG&P\n  + hometel G&P\n  ?        +\n    mobiletel\n    worktela4#C!@\n  - phone2tel_x8\n  + phone2tel_x8....\n  \n  ...Full output truncated (2 lines hidden), use '-vv' to show",
+    "statusTrace" : "app = <fixture.application.Application object at 0x03C71F50>, db = <fixture.db.DbFixture object at 0x03C8D590>\n\n    def test_data_on_home_page(app, db):\n        with allure.step('Checking user count'):\n            if app.user.count() == 0:\n                app.user.create(User(firstname=\"test\"))\n        with allure.step('Given a user list from UI and DB'):\n            users_from_home_page = app.user.get_users_list()\n            users_from_db = db.get_user_list()\n        with allure.step('Then the user list from UI is equal to the user list from DB'):\n            assert len(users_from_home_page) == len(users_from_db)\n            users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)\n            users_from_db = sorted(users_from_db, key=User.id_or_max)\n            for i in range(len(users_from_db)):\n>               compare(users_from_home_page[i], users_from_db[i])\n\ntest\\test_user_data.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nusers_from_home_page = 101:firstnameM$f;None;addreu~;None;None;None;None;None;None;None;None\nusers_from_db = 101:firstnameM$f;company Xk8;addreu~;hometel G&P;worktela4#C!@;mobiletel;phone2tel_x8.;email@5+X /;;;addres4r\n\n    def compare(users_from_home_page, users_from_db):\n        assert users_from_home_page.address == users_from_db.address\n        assert users_from_home_page.firstname == users_from_db.firstname\n        assert users_from_home_page.lastname == users_from_db.lastname\n        assert users_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(users_from_db)\n>       assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)\nE       AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\nE         - hometelG&P\nE         + hometel G&P\nE         ?        +\nE           mobiletel\nE           worktela4#C!@\nE         - phone2tel_x8\nE         + phone2tel_x8....\nE         \nE         ...Full output truncated (2 lines hidden), use '-vv' to show\n\ntest\\test_user_data.py:25: AssertionError",
+    "steps" : [ {
+      "name" : "Checking user count",
+      "time" : {
+        "start" : 1561324422307,
+        "stop" : 1561324422558,
+        "duration" : 251
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Given a user list from UI and DB",
+      "time" : {
+        "start" : 1561324422558,
+        "stop" : 1561324422560,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then the user list from UI is equal to the user list from DB",
+      "time" : {
+        "start" : 1561324422561,
+        "stop" : 1561324422561,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\n  - hometelG&P\n  + hometel G&P\n  ?        +\n    mobiletel\n    worktela4#C!@\n  - phone2tel_x8\n  + phone2tel_x8....\n  \n  ...Full output truncated (2 lines hidden), use '-vv' to show\n",
+      "statusTrace" : "  File \"C:\\python_training\\test\\test_user_data.py\", line 18, in test_data_on_home_page\n    compare(users_from_home_page[i], users_from_db[i])\n  File \"C:\\python_training\\test\\test_user_data.py\", line 25, in compare\n    assert users_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(users_from_db)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1561324422577,
+      "stop" : 1561324423749,
+      "duration" : 1172
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1561324422575,
+      "stop" : 1561324422575,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_user_data"
+  }, {
+    "name" : "host",
+    "value" : "DiTech-PC"
+  }, {
+    "name" : "thread",
+    "value" : "8852-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_user_data"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "cf9f005d8ec148d1.json",
+  "parameterValues" : [ ]
+}

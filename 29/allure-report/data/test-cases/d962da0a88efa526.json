@@ -1,0 +1,186 @@
+{
+  "uid" : "d962da0a88efa526",
+  "name" : "test_add_user[None:firstnamerWwe;companyEE3wcSn;addressMCsadEd;homete77le;worktel;mobiletelD;phone2telLyS;emaiL@u;email2@eut;email3@wR32;addressE12gfq]",
+  "fullName" : "test.test_add_user#test_add_user[None:firstnamerWwe;companyEE3wcSn;addressMCsadEd;homete77le;worktel;mobiletelD;phone2telLyS;emaiL@u;email2@eut;email3@wR32;addressE12gfq]",
+  "historyId" : "f1ee6e189e1bc37a60f36f4449bdbc85",
+  "time" : {
+    "start" : 1561324402148,
+    "stop" : 1561324405045,
+    "duration" : 2897
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324375160,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1561324375160,
+      "stop" : 1561324384189,
+      "duration" : 9029
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1561324384189,
+      "stop" : 1561324384190,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1561324402148,
+        "stop" : 1561324402151,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When I add a user None:firstnamerWwe;companyEE3wcSn;addressMCsadEd;homete77le;worktel;mobiletelD;phone2telLyS;emaiL@u;email2@eut;email3@wR32;addressE12gfq to the list",
+      "time" : {
+        "start" : 1561324402151,
+        "stop" : 1561324405039,
+        "duration" : 2888
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then the new user list is equal to the old list with the added user",
+      "time" : {
+        "start" : 1561324405039,
+        "stop" : 1561324405044,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1561324422577,
+      "stop" : 1561324423749,
+      "duration" : 1172
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1561324422575,
+      "stop" : 1561324422575,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_user"
+  }, {
+    "name" : "host",
+    "value" : "DiTech-PC"
+  }, {
+    "name" : "thread",
+    "value" : "8852-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_user"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_users",
+    "value" : "None:firstnamerWwe;companyEE3wcSn;addressMCsadEd;homete77le;worktel;mobiletelD;phone2telLyS;emaiL@u;email2@eut;email3@wR32;addressE12gfq"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d962da0a88efa526.json",
+  "parameterValues" : [ "None:firstnamerWwe;companyEE3wcSn;addressMCsadEd;homete77le;worktel;mobiletelD;phone2telLyS;emaiL@u;email2@eut;email3@wR32;addressE12gfq" ]
+}

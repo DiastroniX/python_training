@@ -1,17 +1,21 @@
 import re
 from model.user import User
+import allure
 
 
 def test_data_on_home_page(app, db):
-    if app.user.count() == 0:
-        app.user.create(User(firstname="test"))
-    users_from_home_page = app.user.get_users_list()
-    users_from_db = db.get_user_list()
-    assert len(users_from_home_page) == len(users_from_db)
-    users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)
-    users_from_db = sorted(users_from_db, key=User.id_or_max)
-    for i in range(len(users_from_db)):
-        compare(users_from_home_page[i], users_from_db[i])
+    with allure.step('Checking user count'):
+        if app.user.count() == 0:
+            app.user.create(User(firstname="test"))
+    with allure.step('Given a user list from UI and DB'):
+        users_from_home_page = app.user.get_users_list()
+        users_from_db = db.get_user_list()
+    with allure.step('Then the user list from UI is equal to the user list from DB'):
+        assert len(users_from_home_page) == len(users_from_db)
+        users_from_home_page = sorted(users_from_home_page, key=User.id_or_max)
+        users_from_db = sorted(users_from_db, key=User.id_or_max)
+        for i in range(len(users_from_db)):
+            compare(users_from_home_page[i], users_from_db[i])
 
 def compare(users_from_home_page, users_from_db):
     assert users_from_home_page.address == users_from_db.address

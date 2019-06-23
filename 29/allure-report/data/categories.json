@@ -1,0 +1,47 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'NoneType' object has no attribute 'group'",
+      "children" : [ {
+        "name" : "test_phones_on_view_page",
+        "uid" : "c109e3bc166362d9",
+        "parentUid" : "4275126efd978a824e4c8f2963e9923f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1561324421892,
+          "stop" : 1561324422275,
+          "duration" : 383
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4275126efd978a824e4c8f2963e9923f"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 'hometelG&P\\n...nphone2tel_x8' == 'hometel G&P\\n...phone2tel_x8.'\n  - hometelG&P\n  + hometel G&P\n  ?        +\n    mobiletel\n    worktela4#C!@\n  - phone2tel_x8\n  + phone2tel_x8....\n  \n  ...Full output truncated (2 lines hidden), use '-vv' to show",
+      "children" : [ {
+        "name" : "test_data_on_home_page",
+        "uid" : "cf9f005d8ec148d1",
+        "parentUid" : "a148a5fb18db16152558ddd729660ce3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1561324422307,
+          "stop" : 1561324422562,
+          "duration" : 255
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a148a5fb18db16152558ddd729660ce3"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
